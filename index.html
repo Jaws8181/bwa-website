@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrie Web Automation | Local Websites & Automation</title>
+    <meta name="description" content="Premium web automation, custom SaaS, and workflow solutions for businesses in Barrie, Ontario and beyond. Transform your operations with intelligent automation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        'primary-light': '#818cf8',
+                        'primary-dark': '#4f46e5',
+                        accent: '#06b6d4',
+                        'accent-light': '#22d3ee',
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a2e',
+                            600: '#242438',
+                            500: '#2e2e45',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.6)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg md:text-xl font-bold bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Barrie Web Automation</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-200">Services</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors duration-200">Pricing</a>
+                    <a href="#case-studies" class="text-gray-300 hover:text-white transition-colors duration-200">Case Studies</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-primary to-primary-dark rounded-lg text-white font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-200">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-dark-700 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800/95 backdrop-blur-xl border-t border-dark-600">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#services" class="block px-4 py-2 text-gray-300 hover:text-white hover:bg-dark-700 rounded-lg transition-colors">Services</a>
+                <a href="#pricing" class="block px-4 py-2 text-gray-300 hover:text-white hover:bg-dark-700 rounded-lg transition-colors">Pricing</a>
+                <a href="#case-studies" class="block px-4 py-2 text-gray-300 hover:text-white hover:bg-dark-700 rounded-lg transition-colors">Case Studies</a>
+                <a href="#contact" class="block px-4 py-3 bg-gradient-to-r from-primary to-primary-dark rounded-lg text-white font-medium text-center">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+            <div class="grid-bg absolute inset-0 opacity-20"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-6 md:space-y-8">
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-dark-500 bg-dark-800/50 backdrop-blur-sm opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm text-gray-300">Based in Barrie, Ontario &mdash; Serving Clients Worldwide</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight opacity-0 animate-slide-up" style="animation-delay: 0.4s;">
+                    <span class="text-white">Automate Your</span><br>
+                    <span class="bg-gradient-to-r from-primary-light via-accent to-primary-light bg-clip-text text-transparent">Business Growth</span>
+                </h1>
+
+                <!-- Subheading -->
+                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed opacity-0 animate-fade-in" style="animation-delay: 0.6s;">
+                    We build custom web applications, SaaS platforms, and intelligent automation workflows that eliminate manual tasks and scale your operations.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary to-primary-dark rounded-xl text-white font-semibold text-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200">
+                        Start Your Project
+                    </a>
+                    <a href="#services" class="w-full sm:w-auto px-8 py-4 border border-dark-500 rounded-xl text-gray-300 font-semibold text-lg hover:bg-dark-700 hover:border-dark-400 transition-all duration-200">
+                        Explore Services
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 md:gap-12 pt-12 md:pt-16 max-w-lg mx-auto opacity-0 animate-fade-in" style="animation-delay: 1s;">
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white">50+</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white">98%</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Client Retention</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-white">10x</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Avg. ROI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style="animation-delay: 1.2s;">
+            <div class="w-6 h-10 border-2 border-dark-500 rounded-full flex justify-center">
+                <div class="w-1.5 h-3 bg-primary rounded-full mt-2 animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-sm font-medium mb-4">Our Services</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Everything You Need to<br><span class="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Scale Digitally</span></h2>
+                <p class="text-gray-400 text-lg">From stunning web experiences to fully automated business processes, we deliver end-to-end solutions tailored to your growth.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Service 1: Web Design -->
+                <div class="group relative p-8 rounded-2xl bg-dark-800 border border-dark-600 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Web Design & Development</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">High-converting, responsive websites built with modern frameworks. Lightning-fast performance and SEO-optimized from day one.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-primary-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Custom UI/UX Design
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-primary-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Mobile-First Responsive
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-primary-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Performance Optimized
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Custom SaaS -->
+                <div class="group relative p-8 rounded-2xl bg-dark-800 border border-dark-600 hover:border-accent/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5">
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/20 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Custom SaaS Solutions</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Purpose-built software platforms designed for your specific business model. From MVP to full-scale production deployment.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-accent-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Multi-Tenant Architecture
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-accent-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                API-First Development
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-accent-light mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Scalable Cloud Hosting
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Workflow Automation -->
+                <div class="group relative p-8 rounded-2xl bg-dark-800 border border-dark-600 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-green-500/5">
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-b from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/5 border border-green-500/20 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Workflow Automation</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Eliminate repetitive tasks with intelligent automation. Connect your tools, streamline processes, and reclaim hours every week.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Zapier/Make Integrations
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Custom Bot Development
+                            </li>
+                            <li class="flex items-center text-sm text-gray-400">
+                                <svg class="w-4 h-4 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                CRM & Email Automation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative py-20 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-light text-sm font-medium mb-4">Transparent Pricing</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Simple, Predictable<br><span class="bg-gradient-to-r from-accent to-primary-light bg-clip-text text-transparent">Investment</span></h2>
+                <p class="text-gray-400 text-lg">No hidden fees. No surprise invoices. One setup cost and a flat monthly rate for ongoing support, hosting, and maintenance.</p>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="max-w-xl mx-auto">
+                <div class="relative rounded-2xl bg-dark-800 border border-dark-500 overflow-hidden">
+                    <!-- Popular Badge -->
+                    <div class="absolute top-0 right-0">
+                        <div class="bg-gradient-to-r from-primary to-accent text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">MOST POPULAR</div>
+                    </div>
+                    
+                    <div class="p-8 md:p-10">
+                        <h3 class="text-2xl font-bold text-white mb-2">Full-Service Package</h3>
+                        <p class="text-gray-400 mb-8">Everything you need to launch and maintain your digital presence.</p>
+                        
+                        <!-- Pricing -->
+                        <div class="flex items-end gap-4 mb-8 pb-8 border-b border-dark-600">
+                            <div>
+                                <span class="text-sm text-gray-500 uppercase tracking-wide">One-Time Setup</span>
+                                <div class="text-4xl md:text-5xl font-black text-white">$1,000</div>
+                            </div>
+                            <div class="text-gray-500 text-2xl">+</div>
+                            <div>
+                                <span class="text-sm text-gray-500 uppercase tracking-wide">Monthly</span>
+                                <div class="text-4xl md:text-5xl font-black bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">$100<span class="text-lg text-gray-500">/mo</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Custom website or SaaS application design & build</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Workflow automation setup (up to 5 workflows)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Managed hosting & SSL certificate</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Monthly maintenance & security updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Priority support & 2 content updates/month</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <span class="text-gray-300">Analytics dashboard & monthly performance report</span>
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="block w-full py-4 bg-gradient-to-r from-primary to-primary-dark rounded-xl text-white font-semibold text-lg text-center hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200">
+                            Get Started Today
+                        </a>
+                        <p class="text-center text-sm text-gray-500 mt-4">No contracts. Cancel anytime. 30-day money-back guarantee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="relative py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-4">Case Studies & Prototypes</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Real Results for<br><span class="bg-gradient-to-r from-green-400 to-accent bg-clip-text text-transparent">Real Businesses</span></h2>
+                <p class="text-gray-400 text-lg">See how we've helped businesses streamline operations, increase revenue, and reclaim their time through smart automation.</p>
+            </div>
+
+            <!-- Case Studies Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Case Study 1 -->
+                <div class="group rounded-2xl bg-dark-800 border border-dark-600 overflow-hidden hover:border-primary/30 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-primary/20 via-dark-700 to-dark-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMDIwMzAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtNGgtNHYyaC00di0ySDIwdjRoMnY0aC0ydjRoNHYtMmg0djJoNHYtNGgtMnYtNHptMC04aDJ2MmgtMnYtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+                        <div class="relative text-center">
+                            <div class="w-16 h-16 mx-auto bg-dark-800 rounded-xl border border-dark-500 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500 uppercase tracking-wider">E-Commerce</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Automated Order Fulfillment</h3>
+                        <p class="text-gray-400 text-sm mb-4">Built a custom integration connecting Shopify, inventory management, and shipping APIs &mdash; reducing manual processing from 4 hours to 15 minutes daily.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-dark-600">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-primary-light">93%</div>
+                                <div class="text-xs text-gray-500">Time Saved</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-accent">$2,400</div>
+                                <div class="text-xs text-gray-500">Monthly Savings</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-green-400">2 weeks</div>
+                                <div class="text-xs text-gray-500">Delivery Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="group rounded-2xl bg-dark-800 border border-dark-600 overflow-hidden hover:border-accent/30 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-accent/20 via-dark-700 to-dark-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMDIwMzAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtNGgtNHYyaC00di0ySDIwdjRoMnY0aC0ydjRoNHYtMmg0djJoNHYtNGgtMnYtNHptMC04aDJ2MmgtMnYtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+                        <div class="relative text-center">
+                            <div class="w-16 h-16 mx-auto bg-dark-800 rounded-xl border border-dark-500 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-accent-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500 uppercase tracking-wider">SaaS Platform</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">Client Reporting Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4">Developed a multi-tenant SaaS dashboard that auto-generates client reports from Google Analytics, social media, and ad platform data.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-dark-600">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-primary-light">150+</div>
+                                <div class="text-xs text-gray-500">Active Users</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-accent">$8K</div>
+                                <div class="text-xs text-gray-500">MRR Generated</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-green-400">6 weeks</div>
+                                <div class="text-xs text-gray-500">MVP Launch</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="group rounded-2xl bg-dark-800 border border-dark-600 overflow-hidden hover:border-green-500/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="h-48 bg-gradient-to-br from-green-500/20 via-dark-700 to-dark-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMDIwMzAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtNGgtNHYyaC00di0ySDIwdjRoMnY0aC0ydjRoNHYtMmg0djJoNHYtNGgtMnYtNHptMC04aDJ2MmgtMnYtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+                        <div class="relative text-center">
+                            <div class="w-16 h-16 mx-auto bg-dark-800 rounded-xl border border-dark-500 flex items-center justify-center mb-3">
+                                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-mono text-gray-500 uppercase tracking-wider">Lead Generation</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-white mb-2">AI-Powered Lead Nurturing</h3>
+                        <p class="text-gray-400 text-sm mb-4">Created an automated lead scoring and email nurture system that qualifies prospects and books sales calls without human intervention.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-dark-600">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-primary-light">340%</div>
+                                <div class="text-xs text-gray-500">More Leads</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-accent">67%</div>
+                                <div class="text-xs text-gray-500">Close Rate</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-green-400">3 weeks</div>
+                                <div class="text-xs text-gray-500">Setup Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <!-- Left Column -->
+                <div>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-light text-sm font-medium mb-4">Get In Touch</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Let's Build Something<br><span class="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Extraordinary</span></h2>
+                    <p class="text-gray-400 text-lg mb-8">Ready to automate your business and scale faster? Fill out the form and we'll get back to you within 24 hours with a custom proposal.</p>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300">Barrie, Ontario, Canada</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300">james@barriewebautomation.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-300">Response within 24 hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div class="rounded-2xl bg-dark-800 border border-dark-600 p-6 md:p-8">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key - Replace with your own -->
+                        <input type="hidden" name="access_key" value="efa8ef6c-1dbe-49a4-a9b7-d8c8f07370f7">
+                        <input type="hidden" name="subject" value="New Lead from Barrie Web Automation Website">
+                        <input type="hidden" name="from_name" value="Barrie Web Automation Website">
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full px-4 py-3 bg-dark-700 border border-dark-500 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-dark-700 border border-dark-500 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company Inc." class="w-full px-4 py-3 bg-dark-700 border border-dark-500 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interested In</label>
+                                <select id="service" name="service" required class="w-full px-4 py-3 bg-dark-700 border border-dark-500 rounded-xl text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer">
+                                    <option value="" disabled selected class="text-gray-500">Select a service</option>
+                                    <option value="Web Design & Development">Web Design & Development</option>
+                                    <option value="Custom SaaS Solution">Custom SaaS Solution</option>
+                                    <option value="Workflow Automation">Workflow Automation</option>
+                                    <option value="Full-Service Package">Full-Service Package</option>
+                                    <option value="Other">Other / Not Sure</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project, goals, and timeline..." class="w-full px-4 py-3 bg-dark-700 border border-dark-500 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-primary to-primary-dark rounded-xl text-white font-semibold text-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2">
+                                <span>Send Message</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="hidden text-center py-8">
+                        <div class="w-16 h-16 mx-auto bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Message Sent!</h3>
+                        <p class="text-gray-400">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-dark-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-bold bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">Barrie Web Automation</span>
+                </div>
+                <p class="text-gray-500 text-sm">&copy; 2026 Barrie Web Automation. All rights reserved. Barrie, Ontario.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary/50 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary/50 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-primary/50 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
