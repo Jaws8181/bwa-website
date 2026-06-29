@@ -1,390 +1,785 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barrie Web Automation | Websites & Automation for Local Business</title>
-    <meta name="description" content="Barrie Web Automation builds custom websites, SaaS platforms, and workflow automation for Barrie, Ontario small businesses — trades, retail, and professional services. Local, transparent, no lock-in.">
-    <meta name="theme-color" content="#1A1A1A">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Barrie Web Automation | Websites & Automation for Local Business
+    </title>
+    <meta
+      name="description"
+      content="Barrie Web Automation builds custom websites, SaaS platforms, and workflow automation for Barrie, Ontario small businesses — trades, retail, and professional services. Local, transparent, no lock-in."
+    />
+    <meta name="theme-color" content="#1A1A1A" />
 
     <!-- Open Graph / social -->
-    <meta property="og:title" content="Barrie Web Automation | Websites & Automation for Local Business">
-    <meta property="og:description" content="Custom websites, SaaS, and workflow automation for Barrie, Ontario small businesses. Local. Transparent. No lock-in contracts.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://barriewebautomation.com">
-    <meta property="og:image" content="https://barriewebautomation.com/assets/bwa-social.png">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      property="og:title"
+      content="Barrie Web Automation | Websites & Automation for Local Business"
+    />
+    <meta
+      property="og:description"
+      content="Custom websites, SaaS, and workflow automation for Barrie, Ontario small businesses. Local. Transparent. No lock-in contracts."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://barriewebautomation.com" />
+    <meta
+      property="og:image"
+      content="https://barriewebautomation.com/assets/bwa-social.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-    <link rel="apple-touch-icon" href="assets/bwa-logo-512.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="assets/favicon-64.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="assets/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/bwa-logo-512.png" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- ============================= NAV ============================= -->
     <nav class="nav" id="nav">
-        <div class="container nav__inner">
-            <a href="#hero" class="nav__logo" aria-label="Barrie Web Automation home">
-                <img src="assets/bwa-logo-transparent-1024.png" alt="Barrie Web Automation logo" height="42" style="width:auto;">
-            </a>
+      <div class="container nav__inner">
+        <a
+          href="#hero"
+          class="nav__logo"
+          aria-label="Barrie Web Automation home"
+        >
+          <img
+            src="assets/bwa-logo-transparent-1024.png"
+            alt="Barrie Web Automation logo"
+            height="42"
+            style="width: auto"
+          />
+        </a>
 
-            <div class="nav__links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#work">What We Build</a>
-                <a href="#contact" class="btn btn--gold" style="padding:11px 22px;">Get Started</a>
-            </div>
+        <div class="nav__links">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#work">What We Build</a>
+          <a href="#contact" class="btn btn--gold" style="padding: 11px 22px"
+            >Get Started</a
+          >
+        </div>
 
-            <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-                <svg id="navIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
-        </div>
-        <div class="nav__mobile" id="navMobile">
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#work">What We Build</a>
-            <a href="#contact" class="cta">Get Started</a>
-        </div>
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <svg
+            id="navIcon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="nav__mobile" id="navMobile">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#work">What We Build</a>
+        <a href="#contact" class="cta">Get Started</a>
+      </div>
     </nav>
 
     <!-- ============================= HERO ============================= -->
     <header class="hero" id="hero">
-        <div class="hero__bg">
-            <div class="hero__grid"></div>
-            <div class="hero__glow"></div>
+      <div class="hero__bg">
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+      <div class="container hero__inner">
+        <span class="badge">
+          <span class="dot"></span>
+          Based in Barrie, Ontario &mdash; Serving Simcoe County
+        </span>
+
+        <h1>Automate Your <span class="accent">Business Growth</span></h1>
+
+        <p class="lead">
+          We build custom web applications, SaaS platforms, and intelligent
+          automation workflows that eliminate manual tasks and scale your
+          operations.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--gold">Start Your Project</a>
+          <a href="#services" class="btn btn--ghost">Explore Services</a>
         </div>
-        <div class="container hero__inner">
-            <span class="badge">
-                <span class="dot"></span>
-                Based in Barrie, Ontario &mdash; Serving Simcoe County
-            </span>
 
-            <h1>Automate Your <span class="accent">Business Growth</span></h1>
-
-            <p class="lead">
-                We build custom web applications, SaaS platforms, and intelligent automation
-                workflows that eliminate manual tasks and scale your operations.
-            </p>
-
-            <div class="hero__cta">
-                <a href="#contact" class="btn btn--gold">Start Your Project</a>
-                <a href="#services" class="btn btn--ghost">Explore Services</a>
-            </div>
-
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat__num">48hr</div>
-                    <div class="stat__label">Quote Turnaround</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__num">Local</div>
-                    <div class="stat__label">Barrie-Based</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__num">0</div>
-                    <div class="stat__label">Lock-In Contracts</div>
-                </div>
-            </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num">48hr</div>
+            <div class="stat__label">Quote Turnaround</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Local</div>
+            <div class="stat__label">Barrie-Based</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">0</div>
+            <div class="stat__label">Lock-In Contracts</div>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- ============================= SERVICES ============================= -->
     <section class="section" id="services">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="eyebrow">Our Services</span>
-                <hr class="divider divider--center">
-                <h2>Everything You Need to <span class="accent">Scale Digitally</span></h2>
-                <p>From stunning web experiences to fully automated business processes, we deliver
-                   end-to-end solutions tailored to your growth.</p>
-            </div>
-
-            <div class="grid grid--3">
-                <!-- Web Design -->
-                <article class="card reveal">
-                    <div class="icon-chip">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3>Web Design &amp; Development</h3>
-                    <p>Clean, professional websites built for Barrie small businesses. Mobile-friendly, fast-loading, and easy for your customers to use.</p>
-                    <ul class="feat">
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Up to 5 pages, built to your brand</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Mobile-friendly &amp; fast</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Contact forms &amp; Google Maps built in</li>
-                    </ul>
-                </article>
-
-                <!-- Custom SaaS -->
-                <article class="card reveal">
-                    <div class="icon-chip">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    </div>
-                    <h3>Online Forms &amp; Lead Capture</h3>
-                    <p>Turn your website into a lead machine. Quote requests, booking forms, and customer intake — all wired directly to your inbox.</p>
-                    <ul class="feat">
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Quote &amp; booking request forms</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Instant email notifications</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Auto-reply confirmations to customers</li>
-                    </ul>
-                </article>
-
-                <!-- Workflow Automation -->
-                <article class="card reveal">
-                    <div class="icon-chip">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                    </div>
-                    <h3>Workflow Automation</h3>
-                    <p>Stop doing manually what a computer can do for you. We connect your tools so leads, bookings, and follow-ups happen automatically.</p>
-                    <ul class="feat">
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Zapier &amp; Make integrations</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Automated follow-up emails</li>
-                        <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>CRM &amp; email automation</li>
-                    </ul>
-                </article>
-            </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Services</span>
+          <hr class="divider divider--center" />
+          <h2>
+            Everything You Need to <span class="accent">Scale Digitally</span>
+          </h2>
+          <p>
+            From stunning web experiences to fully automated business processes,
+            we deliver end-to-end solutions tailored to your growth.
+          </p>
         </div>
+
+        <div class="grid grid--3">
+          <!-- Web Design -->
+          <article class="card reveal">
+            <div class="icon-chip">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.6"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3>Web Design &amp; Development</h3>
+            <p>
+              Clean, professional websites built for Barrie small businesses.
+              Mobile-friendly, fast-loading, and easy for your customers to use.
+            </p>
+            <ul class="feat">
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Up to 5 pages, built to your brand
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Mobile-friendly &amp; fast
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Contact forms &amp; Google Maps built in
+              </li>
+            </ul>
+          </article>
+
+          <!-- Custom SaaS -->
+          <article class="card reveal">
+            <div class="icon-chip">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.6"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                />
+              </svg>
+            </div>
+            <h3>Online Forms &amp; Lead Capture</h3>
+            <p>
+              Turn your website into a lead machine. Quote requests, booking
+              forms, and customer intake — all wired directly to your inbox.
+            </p>
+            <ul class="feat">
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Quote &amp; booking request forms
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Instant email notifications
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Auto-reply confirmations to customers
+              </li>
+            </ul>
+          </article>
+
+          <!-- Workflow Automation -->
+          <article class="card reveal">
+            <div class="icon-chip">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.6"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+            </div>
+            <h3>Workflow Automation</h3>
+            <p>
+              Stop doing manually what a computer can do for you. We connect
+              your tools so leads, bookings, and follow-ups happen
+              automatically.
+            </p>
+            <ul class="feat">
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Zapier &amp; Make integrations
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >Automated follow-up emails
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  /></svg
+                >CRM &amp; email automation
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- ============================= PRICING ============================= -->
     <section class="section" id="pricing">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="eyebrow">Transparent Pricing</span>
-                <hr class="divider divider--center">
-                <h2>Simple, Predictable <span class="accent">Investment</span></h2>
-                <p>No hidden fees. No surprise invoices. One setup cost and a flat monthly rate for
-                   ongoing support, hosting, and maintenance.</p>
-            </div>
-
-            <div class="pricing reveal">
-                <div class="price-card">
-                    <div class="price-card__ribbon">MOST POPULAR</div>
-                    <div class="price-card__body">
-                        <h3>Full-Service Package</h3>
-                        <p class="muted" style="margin-top:8px;">Everything you need to launch and maintain your digital presence.</p>
-
-                        <div class="price-row">
-                            <div>
-                                <div class="label">Setup</div>
-                                <div class="free">FREE</div>
-                                <div class="was">Normally <s>$250</s></div>
-                            </div>
-                            <div class="plus">+</div>
-                            <div>
-                                <div class="label">Monthly</div>
-                                <div class="amount">$100<small>/mo</small></div>
-                            </div>
-                        </div>
-
-                        <ul class="feat" style="margin-top:0;">
-                            <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Custom website (up to 5 pages) — built for your business</li>
-                            <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>3 automation workflows (quotes, bookings, follow-ups)</li>
-                            <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Managed hosting &amp; SSL certificate (your site stays fast &amp; secure)</li>
-                            <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Monthly maintenance &amp; security updates</li>
-                            <li><svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>1 content update per month</li>
-                        </ul>
-
-                        <div class="addons">
-                            <h4>Optional Add-Ons</h4>
-                            <ul>
-                                <li><span>Extra automation workflows</span><span class="val">+$25/mo each</span></li>
-                                <li><span>Online booking integration</span><span class="val">+$30/mo</span></li>
-                                <li><span>Google My Business management</span><span class="val">+$50/mo</span></li>
-                                <li><span>Social media scheduling</span><span class="val">+$40/mo</span></li>
-                                <li><span>Priority support (same-day)</span><span class="val">+$30/mo</span></li>
-                                <li class="sep"><span>E-commerce / online store</span><span class="val">+$300 setup</span></li>
-                                <li><span>Logo design</span><span class="val">+$150 setup</span></li>
-                            </ul>
-                        </div>
-
-                        <a href="#contact" class="btn btn--gold btn--block">Get Started Today</a>
-                        <p class="price-note">No contracts. Cancel anytime. 30-day money-back guarantee.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Transparent Pricing</span>
+          <hr class="divider divider--center" />
+          <h2>Simple, Predictable <span class="accent">Investment</span></h2>
+          <p>
+            No hidden fees. No surprise invoices. One setup cost and a flat
+            monthly rate for ongoing support, hosting, and maintenance.
+          </p>
         </div>
+
+        <div class="pricing reveal">
+          <div class="price-card">
+            <div class="price-card__ribbon">MOST POPULAR</div>
+            <div class="price-card__body">
+              <h3>Full-Service Package</h3>
+              <p class="muted" style="margin-top: 8px">
+                Everything you need to launch and maintain your digital
+                presence.
+              </p>
+
+              <div class="price-row">
+                <div>
+                  <div class="label">Setup</div>
+                  <div class="free">FREE</div>
+                  <div class="was">Normally <s>$250</s></div>
+                </div>
+                <div class="plus">+</div>
+                <div>
+                  <div class="label">Monthly</div>
+                  <div class="amount">$100<small>/mo</small></div>
+                </div>
+              </div>
+
+              <ul class="feat" style="margin-top: 0">
+                <li>
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    /></svg
+                  >Custom website (up to 5 pages) — built for your business
+                </li>
+                <li>
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    /></svg
+                  >3 automation workflows (quotes, bookings, follow-ups)
+                </li>
+                <li>
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    /></svg
+                  >Managed hosting &amp; SSL certificate (your site stays fast
+                  &amp; secure)
+                </li>
+                <li>
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    /></svg
+                  >Monthly maintenance &amp; security updates
+                </li>
+                <li>
+                  <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    /></svg
+                  >1 content update per month
+                </li>
+              </ul>
+
+              <div class="addons">
+                <h4>Optional Add-Ons</h4>
+                <ul>
+                  <li>
+                    <span>Extra automation workflows</span
+                    ><span class="val">+$25/mo each</span>
+                  </li>
+                  <li>
+                    <span>Online booking integration</span
+                    ><span class="val">+$30/mo</span>
+                  </li>
+                  <li>
+                    <span>Google My Business management</span
+                    ><span class="val">+$50/mo</span>
+                  </li>
+                  <li>
+                    <span>Social media scheduling</span
+                    ><span class="val">+$40/mo</span>
+                  </li>
+                  <li>
+                    <span>Priority support (same-day)</span
+                    ><span class="val">+$30/mo</span>
+                  </li>
+                  <li class="sep">
+                    <span>E-commerce / online store</span
+                    ><span class="val">+$300 setup</span>
+                  </li>
+                  <li>
+                    <span>Logo design</span><span class="val">+$150 setup</span>
+                  </li>
+                </ul>
+              </div>
+
+              <a href="#contact" class="btn btn--gold btn--block"
+                >Get Started Today</a
+              >
+              <p class="price-note">
+                No contracts. Cancel anytime. 30-day money-back guarantee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================= WHAT WE BUILD ============================= -->
     <section class="section" id="work">
-        <div class="container">
-            <div class="section-head reveal">
-                <span class="eyebrow">What We Build</span>
-                <hr class="divider divider--center">
-                <h2>Solutions Built for <span class="accent">Barrie Businesses</span></h2>
-                <p>We're currently booking our first clients. Here's the kind of work we do —
-                   practical tools that save you time and make your business easier to run.</p>
-            </div>
-
-            <div class="grid grid--3">
-                <!-- Trades -->
-                <article class="build-card reveal">
-                    <div class="build-card__top">
-                        <div class="icon-chip">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
-                        </div>
-                        <span>Trades &amp; Home Services</span>
-                    </div>
-                    <div class="build-card__body">
-                        <h3>Online Booking + Quote Follow-Up</h3>
-                        <p>Customers book online, you get notified instantly. Automated follow-up messages go out so no lead falls through the cracks — no phone tag required.</p>
-                        <div class="tags">
-                            <span class="tags__label">Great for</span>
-                            <span class="tag">Plumbers</span>
-                            <span class="tag">HVAC</span>
-                            <span class="tag">Landscapers</span>
-                            <span class="tag">Electricians</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Retail / Food -->
-                <article class="build-card reveal">
-                    <div class="build-card__top">
-                        <div class="icon-chip">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                        </div>
-                        <span>Retail &amp; Food</span>
-                    </div>
-                    <div class="build-card__body">
-                        <h3>Custom Order Management System</h3>
-                        <p>Take orders online, track inventory, and manage pickups or delivery — all in one place. Reduce manual work and keep customers in the loop automatically.</p>
-                        <div class="tags">
-                            <span class="tags__label">Great for</span>
-                            <span class="tag">Restaurants</span>
-                            <span class="tag">Butchers</span>
-                            <span class="tag">Bakeries</span>
-                            <span class="tag">Retailers</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Professional Services -->
-                <article class="build-card reveal">
-                    <div class="build-card__top">
-                        <div class="icon-chip">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        </div>
-                        <span>Professional Services</span>
-                    </div>
-                    <div class="build-card__body">
-                        <h3>Client Intake &amp; Automated Onboarding</h3>
-                        <p>New clients book, fill out intake forms, and receive onboarding info automatically. You spend less time on admin and more time doing the actual work.</p>
-                        <div class="tags">
-                            <span class="tags__label">Great for</span>
-                            <span class="tag">Accountants</span>
-                            <span class="tag">Therapists</span>
-                            <span class="tag">Coaches</span>
-                            <span class="tag">Consultants</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What We Build</span>
+          <hr class="divider divider--center" />
+          <h2>
+            Solutions Built for <span class="accent">Barrie Businesses</span>
+          </h2>
+          <p>
+            We're currently booking our first clients. Here's the kind of work
+            we do — practical tools that save you time and make your business
+            easier to run.
+          </p>
         </div>
+
+        <div class="grid grid--3">
+          <!-- Trades -->
+          <article class="build-card reveal">
+            <div class="build-card__top">
+              <div class="icon-chip">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.6"
+                    d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+                  />
+                </svg>
+              </div>
+              <span>Trades &amp; Home Services</span>
+            </div>
+            <div class="build-card__body">
+              <h3>Online Booking + Quote Follow-Up</h3>
+              <p>
+                Customers book online, you get notified instantly. Automated
+                follow-up messages go out so no lead falls through the cracks —
+                no phone tag required.
+              </p>
+              <div class="tags">
+                <span class="tags__label">Great for</span>
+                <span class="tag">Plumbers</span>
+                <span class="tag">HVAC</span>
+                <span class="tag">Landscapers</span>
+                <span class="tag">Electricians</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Retail / Food -->
+          <article class="build-card reveal">
+            <div class="build-card__top">
+              <div class="icon-chip">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.6"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+              </div>
+              <span>Retail &amp; Food</span>
+            </div>
+            <div class="build-card__body">
+              <h3>Custom Order Management System</h3>
+              <p>
+                Take orders online, track inventory, and manage pickups or
+                delivery — all in one place. Reduce manual work and keep
+                customers in the loop automatically.
+              </p>
+              <div class="tags">
+                <span class="tags__label">Great for</span>
+                <span class="tag">Restaurants</span>
+                <span class="tag">Butchers</span>
+                <span class="tag">Bakeries</span>
+                <span class="tag">Retailers</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Professional Services -->
+          <article class="build-card reveal">
+            <div class="build-card__top">
+              <div class="icon-chip">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.6"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <span>Professional Services</span>
+            </div>
+            <div class="build-card__body">
+              <h3>Client Intake &amp; Automated Onboarding</h3>
+              <p>
+                New clients book, fill out intake forms, and receive onboarding
+                info automatically. You spend less time on admin and more time
+                doing the actual work.
+              </p>
+              <div class="tags">
+                <span class="tags__label">Great for</span>
+                <span class="tag">Accountants</span>
+                <span class="tag">Therapists</span>
+                <span class="tag">Coaches</span>
+                <span class="tag">Consultants</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- ============================= CONTACT ============================= -->
     <section class="section" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="reveal">
-                    <span class="eyebrow">Get In Touch</span>
-                    <hr class="divider">
-                    <h2>Let's Build Something <span class="accent">Extraordinary</span></h2>
-                    <p class="lead" style="margin-top:18px;">Ready to automate your business and scale faster? Fill out the form and we'll get back to you within 24 hours with a custom proposal.</p>
+      <div class="container">
+        <div class="contact-grid">
+          <div class="reveal">
+            <span class="eyebrow">Get In Touch</span>
+            <hr class="divider" />
+            <h2>
+              Let's Build Something <span class="accent">Extraordinary</span>
+            </h2>
+            <p class="lead" style="margin-top: 18px">
+              Ready to automate your business and scale faster? Fill out the
+              form and we'll get back to you within 24 hours with a custom
+              proposal.
+            </p>
 
-                    <div class="contact-info">
-                        <div class="row">
-                            <div class="ic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-                            <span>Barrie, Ontario, Canada</span>
-                        </div>
-                        <div class="row">
-                            <div class="ic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-                            <span>James.Walsh@barriewebautomation.com</span>
-                        </div>
-                        <div class="row">
-                            <div class="ic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                            <span>Response within 24 hours</span>
-                        </div>
-                    </div>
+            <div class="contact-info">
+              <div class="row">
+                <div class="ic">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
                 </div>
-
-                <div class="form-card reveal">
-                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="efa8ef6c-1dbe-49a4-a9b7-d8c8f07370f7">
-                        <input type="hidden" name="subject" value="New Lead from Barrie Web Automation Website">
-                        <input type="hidden" name="from_name" value="Barrie Web Automation Website">
-                        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
-
-                        <div class="field--2">
-                            <div class="field">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
-                            </div>
-                            <div class="field">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="john@company.com">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" placeholder="Your Company Inc.">
-                        </div>
-
-                        <div class="field">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service" required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="Web Design &amp; Development">Web Design &amp; Development</option>
-                                <option value="Custom SaaS Solution">Custom SaaS Solution</option>
-                                <option value="Workflow Automation">Workflow Automation</option>
-                                <option value="Full-Service Package">Full-Service Package</option>
-                                <option value="Other">Other / Not Sure</option>
-                            </select>
-                        </div>
-
-                        <div class="field">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project, goals, and timeline..."></textarea>
-                        </div>
-
-                        <button type="submit" id="submitBtn" class="btn btn--gold btn--block">
-                            <span>Send Message</span>
-                            <svg class="ico" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </button>
-                    </form>
-
-                    <div class="success" id="successMsg">
-                        <div class="check"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
-                        <h3>Message Sent!</h3>
-                        <p class="muted" style="margin-top:8px;">Thank you for reaching out. We'll get back to you within 24 hours.</p>
-                    </div>
+                <span>Barrie, Ontario, Canada</span>
+              </div>
+              <div class="row">
+                <div class="ic">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
+                <span>James.Walsh@barriewebautomation.com</span>
+              </div>
+              <div class="row">
+                <div class="ic">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <span>Response within 24 hours</span>
+              </div>
             </div>
+          </div>
+
+          <div class="form-card reveal">
+            <form
+              id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="efa8ef6c-1dbe-49a4-a9b7-d8c8f07370f7"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Lead from Barrie Web Automation Website"
+              />
+              <input
+                type="hidden"
+                name="from_name"
+                value="Barrie Web Automation Website"
+              />
+              <input
+                type="checkbox"
+                name="botcheck"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <div class="field--2">
+                <div class="field">
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="john@company.com"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="company">Company Name</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your Company Inc."
+                />
+              </div>
+
+              <div class="field">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Web Design &amp; Development">
+                    Web Design &amp; Development
+                  </option>
+                  <option value="Custom SaaS Solution">
+                    Custom SaaS Solution
+                  </option>
+                  <option value="Workflow Automation">
+                    Workflow Automation
+                  </option>
+                  <option value="Full-Service Package">
+                    Full-Service Package
+                  </option>
+                  <option value="Other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Project Details</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Tell us about your project, goals, and timeline..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submitBtn"
+                class="btn btn--gold btn--block"
+              >
+                <span>Send Message</span>
+                <svg
+                  class="ico"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </form>
+
+            <div class="success" id="successMsg">
+              <div class="check">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3>Message Sent!</h3>
+              <p class="muted" style="margin-top: 8px">
+                Thank you for reaching out. We'll get back to you within 24
+                hours.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- ============================= FOOTER ============================= -->
     <footer class="footer">
-        <div class="container footer__inner">
-            <a href="#hero" class="footer__logo" aria-label="Barrie Web Automation home">
-                <img src="assets/bwa-logo.svg" alt="Barrie Web Automation logo">
-            </a>
-            <p>&copy; 2026 Barrie Web Automation. All rights reserved. Barrie, Ontario.</p>
-        </div>
+      <div class="container footer__inner">
+        <a
+          href="#hero"
+          class="footer__logo"
+          aria-label="Barrie Web Automation home"
+        >
+          <img src="assets/bwa-logo.svg" alt="Barrie Web Automation logo" />
+        </a>
+        <p>
+          &copy; 2026 Barrie Web Automation. All rights reserved. Barrie,
+          Ontario.
+        </p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
