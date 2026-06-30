@@ -131,7 +131,7 @@ h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-.nav__logo img { height: auto; width: 160px; }
+.nav__logo img { height: 32px; width: auto; }
 .nav__links { display: flex; align-items: center; gap: 34px; }
 .nav__links a { color: var(--silver); font-weight: 500; font-size: 0.97rem; transition: color 0.2s; }
 .nav__links a:hover { color: var(--white); }
