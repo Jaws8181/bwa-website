@@ -61,6 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
         reveals.forEach(el => el.classList.add('in'));
     }
 
+    /* ---------------- Add-ons dropdown: reveal after service selected ---------------- */
+    const serviceSelect = document.getElementById('service');
+    const addonSection = document.getElementById('addonSection');
+
+    if (serviceSelect && addonSection) {
+        serviceSelect.addEventListener('change', () => {
+            if (serviceSelect.value && serviceSelect.value !== 'Not Sure') {
+                addonSection.style.display = 'block';
+            } else {
+                addonSection.style.display = 'none';
+                document.getElementById('addon').value = '';
+            }
+        });
+    }
+
     /* ---------------- Contact form (Web3Forms) ---------------- */
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
