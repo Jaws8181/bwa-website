@@ -61,20 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
         reveals.forEach(el => el.classList.add('in'));
     }
 
-    /* ---------------- Add-ons dropdown: reveal after service selected ---------------- */
-    const serviceSelect = document.getElementById('service');
-    const addonSection = document.getElementById('addonSection');
-
-    if (serviceSelect && addonSection) {
-        serviceSelect.addEventListener('change', () => {
-            if (serviceSelect.value && serviceSelect.value !== 'Not Sure') {
-                addonSection.style.display = 'block';
-            } else {
-                addonSection.style.display = 'none';
-                document.getElementById('addon').value = '';
+    /* ---------------- Pricing plan → pre-select form ---------------- */
+    document.querySelectorAll('.plan-select').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const plan = btn.getAttribute('data-plan');
+            const select = document.getElementById('service');
+            if (select && plan) {
+                select.value = plan;
             }
         });
-    }
+    });
 
     /* ---------------- Contact form (Web3Forms) ---------------- */
     const form = document.getElementById('contactForm');
