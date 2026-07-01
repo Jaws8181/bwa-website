@@ -230,7 +230,7 @@ h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
 }
 @media (max-width: 960px) {
     .pricing-tiers { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
@@ -254,7 +254,8 @@ h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
     background: var(--gold); color: #1a1a1a; font-size: 0.72rem; font-weight: 700;
     letter-spacing: 0.08em; padding: 6px 52px;
 }
-.price-card__body { padding: 32px; }
+.price-card__body { padding: 32px; display: flex; flex-direction: column; height: 100%; }
+.price-card__body .btn { margin-top: auto; }
 @media (min-width: 961px) { .pricing-tiers .price-card__body { padding: 28px; } }
 .price-row { display: flex; align-items: flex-end; gap: 22px; padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--border-soft); flex-wrap: wrap; }
 .price-row .label { font-size: 0.78rem; color: var(--silver-dim); text-transform: uppercase; letter-spacing: 0.08em; }
