@@ -235,13 +235,20 @@ h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
 @media (max-width: 960px) {
     .pricing-tiers { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 }
-.price-card--pro {
-    border-color: var(--gold) !important;
-    box-shadow: 0 0 0 1px var(--gold), 0 8px 40px rgba(212,175,55,0.12);
-}
 .price-card {
     background: var(--bg-elevated); border: 1px solid var(--border);
     border-radius: var(--radius); overflow: hidden; position: relative;
+    transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+    cursor: pointer;
+}
+.price-card:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 0 0 1px var(--gold-border), 0 8px 40px rgba(184,134,11,0.10);
+    transform: translateY(-3px);
+}
+.price-card.selected {
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 0 1px var(--gold), 0 8px 40px rgba(184,134,11,0.15);
 }
 .price-card__ribbon {
     position: absolute; top: 18px; right: -42px; transform: rotate(45deg);

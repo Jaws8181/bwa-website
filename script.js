@@ -61,14 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
         reveals.forEach(el => el.classList.add('in'));
     }
 
-    /* ---------------- Pricing plan → pre-select form ---------------- */
+    /* ---------------- Pricing plan → pre-select form + highlight card ---------------- */
+    const priceCards = document.querySelectorAll('.price-card');
     document.querySelectorAll('.plan-select').forEach(btn => {
         btn.addEventListener('click', () => {
             const plan = btn.getAttribute('data-plan');
             const select = document.getElementById('service');
-            if (select && plan) {
-                select.value = plan;
-            }
+            if (select && plan) select.value = plan;
+            // Highlight selected card, remove from others
+            priceCards.forEach(card => card.classList.remove('selected'));
+            btn.closest('.price-card').classList.add('selected');
         });
     });
 
