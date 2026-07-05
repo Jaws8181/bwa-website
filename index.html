@@ -557,30 +557,64 @@
     <!-- QR Code for contact card -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
-        const vcard = [
-            'BEGIN:VCARD',
-            'VERSION:3.0',
-            'N:;BWA;;;',
-            'FN:BWA',
-            'ORG:Barrie Workflow Automation',
-            'TITLE:James Walsh, Owner',
-            'TEL;TYPE=CELL:(705) 300-2404',
-            'EMAIL:james@bwabarrie.ca',
-            'URL:https://bwabarrie.ca',
-            'END:VCARD'
-        ].join('\n');
+        function buildVcard(photoBase64) {
+            const lines = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'N:;BWA;;;',
+                'FN:BWA',
+                'ORG:Barrie Workflow Automation',
+                'TITLE:James Walsh, Owner',
+                'TEL;TYPE=CELL:(705) 300-2404',
+                'EMAIL:james@bwabarrie.ca',
+                'URL:https://bwabarrie.ca',
+            ];
+            if (photoBase64) {
+                lines.push('PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64);
+            }
+            lines.push('END:VCARD');
+            return lines.join('\n');
+        }
 
-        new QRCode(document.getElementById('qrcode'), {
-            text: vcard,
-            width: 140,
-            height: 140,
-            colorDark: '#000000',
-            colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.L
-        });
+        function generateQR(vcard) {
+            const div = document.getElementById('qrcode');
+            div.innerHTML = '';
+            new QRCode(div, {
+                text: vcard,
+                width: 210,
+                height: 210,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.L
+            });
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            document.getElementById('vcardDownload').href = URL.createObjectURL(blob);
+        }
 
-        const blob = new Blob([vcard], { type: 'text/vcard' });
-        document.getElementById('vcardDownload').href = URL.createObjectURL(blob);
+        // Try to embed logo; fall back to no-photo vCard if it fails or is too large
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 48;
+                canvas.height = 48;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, 48, 48);
+                // Try quality levels until data fits
+                let base64 = null;
+                for (const q of [0.3, 0.2, 0.1]) {
+                    const data = canvas.toDataURL('image/jpeg', q).split(',')[1];
+                    const testVcard = buildVcard(data);
+                    if (testVcard.length < 2800) { base64 = data; break; }
+                }
+                generateQR(buildVcard(base64));
+            } catch(e) {
+                generateQR(buildVcard(null));
+            }
+        };
+        img.onerror = function() { generateQR(buildVcard(null)); };
+        img.src = '/assets/bwa-logo-512.png';
     </script>
 </body>
 </html>
