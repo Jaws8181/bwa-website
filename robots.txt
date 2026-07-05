@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://barriewebautomation.com/sitemap.xml
+Sitemap: https://bwabarrie.ca/sitemap.xml
