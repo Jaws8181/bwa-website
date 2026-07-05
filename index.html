@@ -560,12 +560,12 @@
         const vcard = [
             'BEGIN:VCARD',
             'VERSION:3.0',
-            'FN:BWA — Barrie Workflow Automation',
-            'ORG:BWA — Barrie Workflow Automation',
+            'FN:James Walsh',
+            'ORG:Barrie Workflow Automation',
+            'TITLE:Owner',
             'TEL;TYPE=CELL:+17053002404',
             'EMAIL:james@bwabarrie.ca',
             'URL:https://bwabarrie.ca',
-            'ADR;TYPE=WORK:;;Barrie;ON;;Canada',
             'END:VCARD'
         ].join('\n');
 
@@ -575,7 +575,7 @@
             height: 140,
             colorDark: '#000000',
             colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.M
+            correctLevel: QRCode.CorrectLevel.L
         });
 
         const blob = new Blob([vcard], { type: 'text/vcard' });
