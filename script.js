@@ -1,8 +1,10 @@
 /**
- * Barrie Web Automation — interactions
+ * Barrie Workflow Automation — interactions
  * Navbar scroll state, mobile menu, smooth scroll, reveal animations,
- * and Web3Forms async submission.
+ * and PocketBase form submission.
  */
+
+const PB_URL = 'https://pocketbase-production-84ab.up.railway.app';
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------------- Navbar scroll state ---------------- */
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ---------------- Contact form (Web3Forms) ---------------- */
+    /* ---------------- Contact form (PocketBase) ---------------- */
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const success = document.getElementById('successMsg');
@@ -88,19 +90,45 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.style.opacity = '0.75';
             submitBtn.style.cursor = 'not-allowed';
 
+            const data = new FormData(form);
+            const subscribed = document.getElementById('subscribe').checked;
+            const name = data.get('name') || '';
+            const email = data.get('email') || '';
+
             try {
-                const res = await fetch('https://api.web3forms.com/submit', {
+                // Save contact record
+                const contactRes = await fetch(`${PB_URL}/api/collections/contacts/records`, {
                     method: 'POST',
-                    body: new FormData(form)
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone: data.get('phone') || '',
+                        service: `${data.get('service') || ''} ${data.get('addon') || ''}`.trim(),
+                        message: data.get('message') || '',
+                        subscribed
+                    })
                 });
-                const data = await res.json();
-                if (data.success) {
-                    form.style.display = 'none';
-                    success.classList.add('show');
-                    form.reset();
-                } else {
-                    throw new Error(data.message || 'Something went wrong');
+                if (!contactRes.ok) throw new Error('Contact save failed');
+
+                // If opted in, save to subscribers
+                if (subscribed) {
+                    await fetch(`${PB_URL}/api/collections/subscribers/records`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email,
+                            name,
+                            source: 'contact-form',
+                            unsubscribed: false
+                        })
+                    });
                 }
+
+                form.style.display = 'none';
+                success.classList.add('show');
+                form.reset();
+
             } catch (err) {
                 submitBtn.innerHTML = '<span>Failed to send — please try again.</span>';
                 setTimeout(() => {
