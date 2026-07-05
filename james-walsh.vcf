@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:James Walsh
+ORG:Barrie Workflow Automation
+TITLE:Owner
+EMAIL;TYPE=WORK:james@bwabarrie.ca
+TEL;TYPE=WORK,VOICE:(705) 300-2404
+URL:https://bwabarrie.ca
+END:VCARD
